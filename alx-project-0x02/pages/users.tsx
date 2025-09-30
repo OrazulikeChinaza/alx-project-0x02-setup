@@ -3,7 +3,17 @@ import Header from "@/components/layout/Header";
 import UserCard from "@/components/common/UserCard";
 import { UserProps } from "@/interfaces";
 
-const UsersPage = () => {
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+interface UsersPageProps {
+  users: User[];
+}
+
+const UsersPage: React.FC<UsersPageProps> = ({}) => {
   const [users, setUsers] = useState<UserProps[]>([]);
 
   useEffect(() => {
